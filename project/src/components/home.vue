@@ -1,0 +1,86 @@
+<template>
+    <div>
+        <ul>
+            <li v-for="(item,index) in list" :key="index">
+                <El :list='item'></El>
+            </li>
+        </ul>
+    </div>
+</template>
+<script>
+import El from "./el-li"
+export default {
+    components:{
+        El
+    },
+    data(){
+        return {
+            list:[
+                    {
+                        id:0,
+                        open:false,
+                        name:"一级目录",
+                        children:[
+                            {
+                                id:10,
+                                open:false,
+                                name:"一级目录1",
+                                children:[
+                                    {
+                                        id:100,
+                                        open:false,
+                                        name:"一级目录11111",
+                                        children:[
+                                            {
+                                                id:1000,
+                                                open:false,
+                                                name:"一级目录111111111"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        id:1,
+                        open:false,
+                        name:"二级目录",
+                        children:[
+                            {
+                                id:11,
+                                open:false,
+                                name:"二级目录1"
+                            }
+                        ]
+                    },
+                    {
+                        id:2,
+                        open:false,
+                        name:"三级目录",
+                        children:[
+                            {
+                                id:21,
+                                open:false,
+                                name:"三级目录1",
+                                children:[
+                                    {
+                                        id:221,
+                                        open:false,
+                                        name:"三级目录11111"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+            ]
+        }
+    }
+}
+</script>
+
+<style>
+li{
+    list-style: none;
+}
+</style>
